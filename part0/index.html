@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+
+    <title>title</title>
+  </head>
+  <style media="screen">
+    li{
+      color: blue;
+    }
+    .notes{
+      padding: 10px;
+     border: 1px solid;
+    }
+  </style>
+  <body>
+
+    <div class="notes">
+      <h1>Notes</h1>
+      <ul id="list">
+
+      </ul>
+      <form class="form" action="index.html" method="post">
+        <input type="text" name="" class="input" id="text" value="">
+        <br>
+        <input type="button" name="" value="save" onclick="addelemntlist()" />
+      </form>
+    </div>
+
+    <script type="text/javascript">
+      addelemntlist = function() {
+    let ul = document.getElementById("list");
+  let text = document.getElementById("text");
+    let li = document.createElement("li");
+    let children = ul.children.length + 1
+    li.setAttribute("id", "element"+children)
+    li.appendChild(document.createTextNode(text.value));
+    ul.appendChild(li)
+}
+    </script>
+  </body>
+</html>
